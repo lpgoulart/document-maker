@@ -1,0 +1,21 @@
+qual o seu nome?
+qual o nome do dono?
+qual o telefone para contato?
+qual o modelo do notebook?
+qual o serviço solicitado?
+
+qual o estado da tela?
+qual o estado do teclado?
+qual o estado do touch-pad?
+qual o estado do som?
+qual o estado do fone de ouvido?
+qual o estado das portas usb?
+
+possui saida vga?
+--->qual o estado?
+possui saida hdmi?
+--->qual o estado?
+possui leitor de cd?
+--->qual o estado?
+possui porta ethernet?
+--->qual o estado?
