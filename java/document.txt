@@ -1,0 +1,30 @@
+Ordem de serviço
+
+O presente documento tem como finalidade deixar registrado que o funcionario word0 da empresa LacunaTech esta responsavel pelo computador do cliente: word1. O mesmo deixou para contato seu numero: word2.
+
+O serviço será realizado no computador de modelo word3. Por motivos de segurança fica por meio deste registrado o estado do computador em que será feito o serviço:
+
+Descrição do estado do produto no que diz respeito à:
+Tela, Teclado, Touch-Pad, Som e portas USB:
+word5
+
+Possui saída VGA e seu estado:
+word6
+
+Possui saída HDMI e seu estado:
+word7
+
+Possui leitor de CD e seu estado:
+word8
+
+Possui porta Ethernet e seu estado:
+word9
+
+Descrição do serviço:
+word4
+
+Fim da ordem de serviço.
+
+
+
+
