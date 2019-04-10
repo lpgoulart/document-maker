@@ -3,16 +3,25 @@ package client;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Scanner;
 
 public class Client {
+
+	private static Scanner scan;
+
 	private String clientName;
 	private String clientPhone;
 	private File document;
+	private String path;
+	private String responsible;
 	
 	public Client( String name, String phone ) {
 		this.clientName = name;
 		this.clientPhone = phone;
 		this.document = new File ("document.txt");
+		scan = new Scanner(System.in);
+		this.path = null;
+		this.responsible = "";
 	}
 
 	/**
@@ -44,9 +53,9 @@ public class Client {
 	}
 	
 	// Folder creation and verifying if it doesn't exist. If so create a new
-	public String checkResponsible ( String responsible ) {
-		File directory = new File("responsibles/"+responsible);
-		String path = null;
+	public void checkResponsible ( String responsible ) throws IOException {
+		this.responsible = responsible;
+		File directory = new File("responsibles/"+this.responsible);
 	    
 		if (directory.exists() && directory.isFile())
 	    {
@@ -59,10 +68,10 @@ public class Client {
 			{
 			    directory.mkdir();
 			}
-			path = "responsibles/"+ responsible + "/" + clientName + ".txt";
+			path = "responsibles/"+ this.responsible + "/" + clientName + ".txt";
 	    }
 		
-		return path;
+		createClientFile (path);
 	}
 	
 	// File creation and verifying if it doesn't exist. If so create a new
@@ -74,6 +83,29 @@ public class Client {
 				    Files.copy(this.document.toPath(), file.toPath());
 				} else {
 					System.out.println("There is a client with that  name register");
+					chooseAnotherName();
+					System.out.println("New client register");
+				}
+		} catch ( IOException e ) {
+			System.out.println(e);
+		}
+	}
+
+	public void chooseAnotherName () {
+		System.out.println("Please choose another name for client!");
+		String entry; 
+		entry = scan.nextLine();
+		this.clientName = entry;
+
+		path = "responsibles/"+ this.responsible + "/" + clientName + ".txt"; 
+
+		try {
+			File file = new File(path);
+				if (!file.exists()) {
+				    Files.copy(this.document.toPath(), file.toPath());
+				} else {
+					System.out.println("There is a client with that  name register");
+					chooseAnotherName();
 				}
 		} catch ( IOException e ) {
 			System.out.println(e);

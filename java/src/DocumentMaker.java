@@ -1,6 +1,6 @@
 import java.util.Scanner;
-import java.io.File;
 import client.Client;
+import client.Informations;
 
 class DocumentMaker {
 	private static Scanner scan;
@@ -8,10 +8,11 @@ class DocumentMaker {
 	public static void main(String[] args) {
 		try 
 		{
-			// 
+			Informations serviceOrder = new Informations(); 
 			String responsible = null;
 			String clientName;
 			String clientPhone;
+			String entry;
 		
 			scan = new Scanner(System.in);
 			// Strings variables
@@ -28,12 +29,11 @@ class DocumentMaker {
 				
 				Client client = new Client( clientName, clientPhone );
 				
-				path = client.checkResponsible( responsible );
-				client.createClientFile(path);
-			
-			
+				client.checkResponsible( responsible );
+//				client.createClientFile(path);
+				serviceOrder.description();
 				
-
+				System.out.println("Done description of product!!");
 
 		} 
 		catch (Exception e) 
